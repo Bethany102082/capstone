@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title th:text="${title}">My Cheeses</title>
+</head>
+<body>
+
+<h1>Hello, World</h1>
+
+<h2 th:text="${title}"></h2>
+
+<form method="POST">
+    <label for="name">Name: </label>
+    <input id="name" type="text" name="name"/>
+    <label for="church">Church: </label>
+    <input id="church" type="text" name="church"/>
+    <input type="submit" value="I'm here"/>
+</form>
+<br><hr><br>
+<table style="border:1px solid black">
+    <tr>
+        <td style="border-bottom:1px solid black">Names</td>
+        <td style="border-bottom:1px solid black">Churches</td>
+    </tr>
+    <tr th:each="log : ${logs}">
+        <td th:text="${log.name}"></td>
+        <td th:text="${log.church}"></td>
+    </tr>
+</table>
+</body>
+</html>
